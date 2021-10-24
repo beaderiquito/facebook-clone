@@ -1,0 +1,64 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+}
+
+.hidden {
+  display: none;
+}
+
+/*Start of Search Bar*/
+.search-container {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+// When the input field gets focus, change its width to 100%
+input[type=search] {
+  width: 150px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+
+  &:focus {
+  width: 300px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+}
+.search-field {
+  width: 100%;
+  padding: 10px 35px 10px 15px;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -33px;
+}
+
+.search-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+/* End of Search bar */
+
+.spacer{
+  flex: 1 1 auto;
+}
+
+.nav-link {
+  margin-left: 20px;
+  margin-right: 20px;
+}
