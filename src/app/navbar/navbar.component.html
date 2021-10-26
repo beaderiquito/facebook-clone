@@ -1,0 +1,56 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [ngClass]="{hidden: (isHandset$ | async) === false}"
+    fixedInViewport = "false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <!--Change the following links to routerlinks-->
+      <a mat-list-item href="#">See your Profile</a>
+      <a mat-list-item href="#">Help and Support</a>
+      <a mat-list-item href="#">Settings</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <!--Logo-->
+      <span>facebook</span>
+
+      <!--Search Bar-->
+      <div class="search-container">
+        <form action="/" method="GET" class="form">
+          <input type="search" placeholder="Search" class="search-field" />
+          <button type="submit" class="search-button">
+            <img src="../../assets/search.png">
+          </button>
+        </form>
+      </div>
+
+      <span class="spacer"></span>
+      <a class="nav-link" *ngIf="(isHandset$ | async) == false"><span>Profile</span></a>
+      <a class="nav-link" *ngIf="(isHandset$ | async) == false"><span>Help and Support</span></a>
+      <a class="nav-link" *ngIf="(isHandset$ | async) == false"><span>Settings</span></a>
+
+      <!--Other Nav List Items-->
+
+      <!--Hamburger menu when window size is small-->
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
